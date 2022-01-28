@@ -4,15 +4,18 @@ body {
 }
 
 .meunome {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 50px;
     color: darkred;
     text-align: center;
 }
 .descrição {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
-    top: 125px;
-    right: 8%;
+    top: 120px;
+    right: 5%;
+    font-size: 17px;
+    color: black;
 }
 
 p {
@@ -29,8 +32,8 @@ ul{
     height: 180px;
     border-radius: 50%;
     float: left;
-    width: 180px;
-    padding: 10px;
+    width: 200px;
+    padding: 12px;
     background-color: darksalmon;
 }  
 
@@ -55,6 +58,16 @@ background-color: coral;
     position: relative;
 }
 
-ul li:nth-child(odd) {
-    background-color: coral;
+ul li {
+    padding: 3px;
+    font-size: 18px;
+    color: black;
 }
+
+.habilidades {
+    font-family: 'Alfa Slab One', cursive;
+    color: darkred;
+    font-size: 30px;
+
+}
+
