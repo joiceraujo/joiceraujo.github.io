@@ -1,0 +1,49 @@
+body {
+    background-color: antiquewhite;
+}
+
+.meunome {
+    font-family: 'Roboto', sans-serif;
+    color: darkred;
+    text-align: center;
+}
+
+
+p {
+        color: darkblue;
+        font-size: 16px;
+    }
+
+ul{
+    color: darkslategray;
+    font-size: 16px;
+}
+
+.picture {
+    width: 100px;
+    height: auto;
+    border-radius: 100px;
+}  
+
+.element {
+background-color: coral;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #302326;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 16px;
+}
+
+#pictures {
+    float: left;
+    height: 300px;
+}
+.imagecontainer {
+    height: 300px;
+}
+div {
+    border: 2px solid coral
+}
