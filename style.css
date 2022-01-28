@@ -1,5 +1,6 @@
 body {
     background-color: antiquewhite;
+    padding: 4%
 }
 
 .meunome {
@@ -7,7 +8,12 @@ body {
     color: darkred;
     text-align: center;
 }
-
+.descrição {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 125px;
+    right: 8%;
+}
 
 p {
         color: darkblue;
@@ -20,9 +26,12 @@ ul{
 }
 
 .picture {
-    width: 100px;
-    height: auto;
-    border-radius: 100px;
+    height: 180px;
+    border-radius: 50%;
+    float: left;
+    width: 180px;
+    padding: 10px;
+    background-color: darksalmon;
 }  
 
 .element {
@@ -43,7 +52,9 @@ background-color: coral;
 }
 .imagecontainer {
     height: 300px;
+    position: relative;
 }
-div {
-    border: 2px solid coral
+
+ul li:nth-child(odd) {
+    background-color: coral;
 }
