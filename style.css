@@ -1,25 +1,41 @@
 body {
     background-color: antiquewhite;
-    padding: 4%
+    padding: 3%
+}
+
+.navegacao {
+    display: none;
+}
+
+.menu {
+    max-width: 32px;
+    max-height: 32px;
+    padding-right: 16px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    
 }
 
 .meunome {
-    font-family: 'Alfa Slab One', cursive;
+    font-family:'Lato', sans-serif;
     font-size: 50px;
-    color: darkred;
+    color: crimson;
     text-align: center;
 }
 .descrição {
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    top: 120px;
+    font-family: 'Lato', sans-serif;
+    top: 150px;
     right: 5%;
     font-size: 17px;
     color: black;
 }
 
 p {
-        color: darkblue;
+        color: black;
         font-size: 16px;
     }
 
@@ -34,7 +50,7 @@ ul{
     float: left;
     width: 200px;
     padding: 12px;
-    background-color: darksalmon;
+    background-color: cadetblue;
 }  
 
 .element {
@@ -71,3 +87,32 @@ ul li {
 
 }
 
+.barra-azul {
+    height: 16px;
+    background-color: #8FCDD4;
+}
+.rodape {
+    background-color: #302326;
+    color: #FAEADD;
+    font-family: 'Lato', sans-serif;
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.a {
+    text-decoration: none;
+}
+
+.rodape-fim {
+    font-size: 20px;
+    font-weight: 700;  
+}
+
+.redes-sociais{
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 32px;
+}
