@@ -1,47 +1,39 @@
 body {
-    background-color: antiquewhite;
-    padding: 3%
+    background-color: #302326;
+    padding: 2%
 }
 
 .navegacao {
     display: none;
+    background-color: antiquewhite;
 }
 
 .menu {
     max-width: 32px;
     max-height: 32px;
     padding-right: 16px;
-    margin: 0;
-    padding: 0;
-    border: 0;
+    margin: 0%;
+    padding: 0%;
+    border: 0%;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    
+    background-color: antiquewhite;
 }
 
 .meunome {
     font-family:'Lato', sans-serif;
-    font-size: 50px;
-    color: crimson;
+    font-size: 40px;
+    color: cadetblue;
     text-align: center;
 }
+
 .descrição {
     font-family: 'Lato', sans-serif;
-    top: 150px;
-    right: 5%;
-    font-size: 17px;
-    color: black;
-}
-
-p {
-        color: black;
-        font-size: 16px;
-    }
-
-ul{
-    color: darkslategray;
     font-size: 16px;
+    color: antiquewhite;
+    text-align: center;
+    padding: 6%;
 }
 
 .picture {
@@ -49,70 +41,60 @@ ul{
     border-radius: 50%;
     float: left;
     width: 200px;
-    padding: 12px;
-    background-color: cadetblue;
+    padding: 1%;
+  
 }  
 
 .element {
-background-color: coral;
-    margin-left: 8px;
+    font-family: 'Lato', sans-serif;
+    background-color: lightpink;
+    margin-left: 0%;
     margin-right: 8px;
-    color: #302326;
-    padding-left: 8px;
-    padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border-radius: 16px;
+    color: black;
+    padding: 1%;
+    padding-bottom: 8px;
+    border-radius: 20px;
 }
 
-#pictures {
+.pictures {
     float: left;
-    height: 300px;
+    padding: 0%;
 }
 .imagecontainer {
     height: 300px;
     position: relative;
+   padding: 0%;
+
 }
 
 ul li {
     padding: 3px;
     font-size: 18px;
-    color: black;
+    color: antiquewhite;
+    margin: 0%;
+    text-align: left;
 }
 
 .habilidades {
-    font-family: 'Alfa Slab One', cursive;
-    color: darkred;
-    font-size: 30px;
-
-}
-
-.barra-azul {
-    height: 16px;
-    background-color: #8FCDD4;
-}
-.rodape {
-    background-color: #302326;
-    color: #FAEADD;
     font-family: 'Lato', sans-serif;
-    padding-top: 16px;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-.a {
-    text-decoration: none;
+    color: antiquewhite;
+    font-size: 25px;
+    padding: 0%;
 }
 
 .rodape-fim {
-    font-size: 20px;
-    font-weight: 700;  
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    background-color: cadetblue;
+    padding: 0%; 
+    margin: 0%;
 }
 
 .redes-sociais{
-    margin-top: 32px;
+    background-color: antiquewhite;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 32px;
+    padding-bottom: 50px;
+    padding: 2%;
 }
