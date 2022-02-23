@@ -1,100 +1,32 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #302326;
-    padding: 2%
+    background-color: lightsteelblue;
 }
 
-.navegacao {
-    display: none;
-    background-color: antiquewhite;
-}
-
-.menu {
-    max-width: 32px;
-    max-height: 32px;
-    padding-right: 16px;
-    margin: 0%;
-    padding: 0%;
-    border: 0%;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    background-color: antiquewhite;
-}
-
-.meunome {
-    font-family:'Lato', sans-serif;
-    font-size: 40px;
-    color: cadetblue;
-    text-align: center;
-}
-
-.descrição {
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    color: antiquewhite;
-    text-align: center;
-    padding: 6%;
-}
-
-.picture {
-    height: 180px;
-    border-radius: 50%;
-    float: left;
+.logo {
     width: 200px;
-    padding: 1%;
-  
-}  
-
-.element {
-    font-family: 'Lato', sans-serif;
-    background-color: lightpink;
-    margin-left: 0%;
-    margin-right: 8px;
-    color: black;
-    padding: 1%;
-    padding-bottom: 8px;
-    border-radius: 20px;
 }
 
-.pictures {
-    float: left;
-    padding: 0%;
+header {
+    background-color: darkblue;
 }
-.imagecontainer {
-    height: 300px;
-    position: relative;
-   padding: 0%;
-
-}
-
-ul li {
-    padding: 3px;
-    font-size: 18px;
-    color: antiquewhite;
-    margin: 0%;
-    text-align: left;
-}
-
-.habilidades {
-    font-family: 'Lato', sans-serif;
-    color: antiquewhite;
-    font-size: 25px;
-    padding: 0%;
-}
-
-.rodape-fim {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    background-color: cadetblue;
-    padding: 0%; 
-    margin: 0%;
-}
-
-.redes-sociais{
-    background-color: antiquewhite;
+a {
+    text-decoration: none;
+    color: white;
+    justify-content: space-between;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 50px;
-    padding: 2%;
+}
+
+footer {
+    background-color: darkblue;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    text-align: center;
 }
