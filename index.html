@@ -13,36 +13,98 @@
 
 <body>
     <header>
-        <img class="logo" src="Logotipo 500x500  px. (1).png" alt="Logotipo">
-        <nav class="nav justify-content-end">
-            <a href="">HOME</a>
-            <a href="">ABOUT ME</a>
-            <a href="">PROJECTS</a>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <img class="logo" src="Logotipo 500x500  px..png" alt="MDB Logo" loading="lazy"/>
+            </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                 <a class="nav-link" href="#">ABOUT ME</a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link" href="#">PROJECTS</a>
+                </li>
+            </ul>
+      </div>
+      
+        <div class="dropdown">
+            <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false">
+                <img
+              src="WhatsApp Image 2022-02-07 at 09.56.30.jpeg"
+              class="rounded-circle"
+              height="30"
+              width="30"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"/>
+            </a>
+          <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar">
+                <li>
+                    <a class="dropdown-item" href="https://mail.google.com/mail/u/0/?ogbl#inbox">EMAIL</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="https://github.com/joiceraujo">GITHUB</a>
+                </li>
+          </ul>
+        </div>
     </header>
-
     <main>
-        <section>
-            <div>
-                <h1>Joice Araújo</h1>
-                <h2>Desenvolvedora Web Full Stack</h2>
-                </div>
-            <img src="Logotipo 500x500  px..png" alt="">
+        <section class="p-container">
+            <h1>Joice Araújo</h1>
         </section>
-        <section>
-            <div>
-                <h3>Linguagens</h3>
-                <p>Desenvolvimento Full Stack</p>
-                <p>under construction...</p>
-            </div>
+        <section class="p-container">
+            <p>
+            Olá, sou Joice Araújo, sou desenvolvedora web. <br>
+            Sejam bem vindos ao meu Portifólio!
+            </p>
         </section>
+        <section class="p-container">
+                <div class="html-css-js">
+                <img src="html-5.png" alt="HTML" width="50px">
+                <img src="css-3.png" alt="CSS" width="50px">
+                <img src="js.png" alt="Javascript" width="50px">
+        </section>      
     </main>
+    
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-10bb9d3c-94c8-4975-bee5-1c641bd5405d feed" ></div>
 
-    <footer>
-        <a href="https://www.instagram.com/joiceraujo"> <img src="icons8-instagram.svg" alt="Instagram"></a>
-        <a href="https://www.linkedin.com/in/joicearaujodev"> <img src="icons8-linkedin.svg" alt="Linkedin"></a>
-        <a href="https://github.com/joiceraujo"> <img src="icons8-github.svg" alt="Linkedin"></a>
-        
-    </footer>
+    <footer class="bg-dark text-center text-white">
+    <div class="container p-4">
+        <section class="mb-4">
+            <p>Social Networks</p>
+          </section>
+      <section class="mb-4">
+            <a href="https://www.instagram.com/joiceraujo"> <img src="icons8-instagram.svg" alt="Instagram"></a>
+  
+            <a href="https://www.linkedin.com/in/joicearaujodev"> <img src="icons8-linkedin.svg" alt="Linkedin"></a>
+
+            <a href="https://github.com/joiceraujo"> <img src="icons8-github.svg" alt="Linkedin"></a>
+        </section>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: deeppink;">
+    </div>  
+  </footer>
+   
 </body>
 </html>
