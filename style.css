@@ -24,6 +24,7 @@ p {
 
 html {
     scroll-behavior: smooth;
+    height: max-content;
 }
 .html-css-js {
     display: flex;
@@ -33,14 +34,18 @@ html {
     width: 100px;
 }
 
+
 .feed {
     width: 50%;
+    bottom: 300px;
+    margin-left: 400px;
+    margin-top: 600px;
 }
 
 footer {
     background-color: darkblue;
     bottom: 0;
-    position: fixed;
+    position: relative;
     width: 100%;
     text-align: center;
 }
