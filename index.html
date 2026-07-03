@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joice Araújo — Analista de Sistemas & Desenvolvedora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --creme: #F5EEE2;
+    --creme-card: #FFFBF2;
+    --ink: #221812;
+    --ink-soft: #4A3F35;
+    --terracota: #A8462B;
+    --terracota-deep: #7C3520;
+    --dourado: #B0863A;
+    --dourado-bright: #D2A94E;
+    --log-green: #6E7B57;
+    --line: rgba(34,24,18,0.12);
+    --line-dark: rgba(245,238,226,0.14);
+    --radius: 2px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--creme);
+    color:var(--ink);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{background:var(--terracota);color:var(--creme-card);}
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--terracota-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:16px;height:1px;
+    background:var(--terracota-deep);
+    display:inline-block;
+  }
+
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(245,238,226,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .nav-mark{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .nav-mark span{color:var(--terracota);}
+  .nav-links{
+    display:flex;
+    gap:28px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  .nav-links a{
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+    transition:color .2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--terracota-deep);}
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:0;
+    width:0;height:1px;
+    background:var(--terracota);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-toggle{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:168px 0 96px;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:end;
+  }
+  .hero h1{
+    font-size:clamp(40px, 5.4vw, 74px);
+    margin:22px 0 26px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--terracota);
+  }
+  .hero-desc{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.03em;
+    padding:14px 24px;
+    border-radius:var(--radius);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:transform .2s ease, background .2s ease, color .2s ease;
+    border:1px solid var(--ink);
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--creme-card);
+  }
+  .btn-primary:hover{
+    background:var(--terracota-deep);
+    border-color:var(--terracota-deep);
+    transform:translateY(-2px);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+  }
+  .btn-ghost:hover{
+    background:var(--ink);
+    color:var(--creme-card);
+    transform:translateY(-2px);
+  }
+
+  /* terminal panel */
+  .terminal{
+    background:var(--ink);
+    color:#E9E2D3;
+    border-radius:var(--radius);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    overflow:hidden;
+    box-shadow:0 24px 60px -20px rgba(34,24,18,0.45);
+  }
+  .terminal-bar{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:11px 16px;
+    background:rgba(255,255,255,0.04);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:rgba(233,226,211,0.25);}
+  .terminal-title{
+    margin-left:8px;
+    font-size:11px;
+    color:rgba(233,226,211,0.5);
+    letter-spacing:0.04em;
+  }
+  .terminal-body{padding:22px 20px 26px;}
+  .terminal-line{margin-bottom:11px;}
+  .prompt{color:var(--dourado-bright);}
+  .cmd{color:#E9E2D3;}
+  .out{color:var(--log-green);}
+  .out.muted{color:rgba(233,226,211,0.55);}
+  .cursor{
+    display:inline-block;
+    width:7px;height:14px;
+    background:var(--terracota);
+    vertical-align:middle;
+    animation:blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  /* ===== SECTION BASE ===== */
+  section{padding:96px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:52px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:28px;
+  }
+  .section-head h2{font-size:clamp(28px,3.4vw,42px);}
+  .section-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:64px;
+  }
+  .about-lead{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:26px;
+    line-height:1.42;
+    color:var(--ink);
+  }
+  .about-body p{
+    color:var(--ink-soft);
+    margin-bottom:16px;
+    font-size:15.5px;
+  }
+  .about-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:24px;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    padding:7px 12px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    color:var(--ink-soft);
+  }
+
+  /* ===== STACK / SKILLS ===== */
+  .stack-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .stack-item{
+    background:var(--creme);
+    padding:30px 26px;
+    transition:background .25s ease;
+  }
+  .stack-item:hover{background:var(--creme-card);}
+  .stack-item .idx{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--terracota-deep);
+    display:block;
+    margin-bottom:14px;
+  }
+  .stack-item h3{
+    font-size:19px;
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .stack-item p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+
+  /* ===== EXPERIENCE / LOG ===== */
+  .log{
+    font-family:'IBM Plex Mono', monospace;
+    border-top:1px solid var(--line);
+  }
+  .log-entry{
+    display:grid;
+    grid-template-columns:150px 1fr auto;
+    gap:24px;
+    align-items:start;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .log-time{
+    font-size:12px;
+    color:var(--log-green);
+    padding-top:4px;
+  }
+  .log-main h3{
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    margin-bottom:5px;
+    letter-spacing:-0.01em;
+  }
+  .log-main .role{
+    font-size:12px;
+    color:var(--terracota-deep);
+    margin-bottom:9px;
+    letter-spacing:0.02em;
+  }
+  .log-main p{
+    font-family:'DM Sans', sans-serif;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+  .log-status{
+    font-size:11px;
+    padding:5px 10px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    height:fit-content;
+  }
+  .log-status.live{
+    color:var(--terracota-deep);
+    border-color:var(--terracota-deep);
+  }
+
+  /* ===== PROJECTS ===== */
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .proj-card{
+    background:var(--creme-card);
+    padding:38px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:260px;
+    transition:transform .25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .proj-card:hover{transform:translateY(-3px);}
+  .proj-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--dourado);
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .proj-card h3{
+    font-size:23px;
+    margin-bottom:10px;
+  }
+  .proj-card p{
+    color:var(--ink-soft);
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .proj-meta{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .proj-meta span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    padding:4px 9px;
+    border-radius:16px;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact{
+    background:var(--ink);
+    color:var(--creme);
+    border-radius:var(--radius);
+    padding:76px 60px;
+    text-align:left;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact::before{
+    content:'';
+    position:absolute;
+    top:-40%;right:-10%;
+    width:420px;height:420px;
+    background:radial-gradient(circle, rgba(168,70,43,0.35), transparent 70%);
+    pointer-events:none;
+  }
+  .contact h2{
+    font-size:clamp(30px,4vw,50px);
+    max-width:14ch;
+    margin-bottom:22px;
+    position:relative;
+  }
+  .contact h2 em{font-style:italic;color:var(--dourado-bright);}
+  .contact p{
+    color:rgba(245,238,226,0.7);
+    max-width:48ch;
+    margin-bottom:34px;
+    position:relative;
+  }
+  .contact-links{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    position:relative;
+  }
+  .contact-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:14px 22px;
+    border:1px solid var(--line-dark);
+    border-radius:var(--radius);
+    transition:all .2s ease;
+  }
+  .contact-links a:hover{
+    background:var(--creme-card);
+    color:var(--ink);
+    border-color:var(--creme-card);
+  }
+
+  footer{
+    padding:40px 0 56px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  /* reveal on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .cursor{animation:none;}
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 880px){
+    .hero{grid-template-columns:1fr;padding-top:140px;}
+    .about-grid{grid-template-columns:1fr;gap:32px;}
+    .stack-grid{grid-template-columns:1fr;}
+    .proj-grid{grid-template-columns:1fr;}
+    .log-entry{grid-template-columns:1fr;gap:8px;}
+    .log-status{justify-self:start;}
+    .contact{padding:48px 28px;}
+    .nav-links{
+      position:fixed;
+      top:60px;right:0;
+      background:var(--creme-card);
+      flex-direction:column;
+      padding:24px 28px;
+      gap:18px;
+      border-left:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      transform:translateX(100%);
+      transition:transform .3s ease;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{
+      display:block;
+      font-family:'IBM Plex Mono', monospace;
+      font-size:12px;
+      background:none;
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:4px;
+    }
+  }
+  @media (min-width: 881px){
+    .nav-toggle{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-mark">joice<span>.</span>araujo<span>()</span></div>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">menu</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#sobre">sobre</a>
+      <a href="#stack">stack</a>
+      <a href="#experiencia">experiência</a>
+      <a href="#projetos">projetos</a>
+      <a href="#contato">contato</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Análise de sistemas / Desenvolvimento</p>
+      <h1>Eu penso em <em>fluxos</em>.<br>Eu construo em <em>código</em>.</h1>
+      <p class="hero-desc">Analista de sistemas com atuação em desenvolvimento web. Traduzo processos confusos em sistemas simples — e simples em interfaces que funcionam de verdade.</p>
+      <div class="hero-cta">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a href="#contato" class="btn btn-ghost">Falar comigo</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="terminal-title">joice@sistemas — zsh</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">whoami</span></div>
+        <div class="terminal-line"><span class="out">joice_araujo</span></div>
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat cargo.txt</span></div>
+        <div class="terminal-line"><span class="out">Analista de Sistemas / Desenvolvedora</span></div>
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls stack/</span></div>
+        <div class="terminal-line"><span class="out muted">html · css · js · sql · apis · automação</span></div>
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">status --disponibilidade</span></div>
+        <div class="terminal-line"><span class="out">disponível para novos projetos<span class="cursor"></span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="section-head reveal">
+      <h2>Sobre</h2>
+      <span class="section-num">01 / sobre</span>
+    </div>
+    <div class="about-grid">
+      <p class="about-lead reveal">Sistema que não é entendido, é sistema que não é usado. Meu trabalho começa antes da tela: no mapeamento do que realmente precisa existir.</p>
+      <div class="about-body reveal">
+        <p>Atuo como analista de sistemas, com experiência prática em desenvolvimento web e automação de processos. Meu diferencial não é escrever código — é entender o problema fundo o suficiente para que o código seja simples.</p>
+        <p>Trabalho na ponte entre quem decide, quem executa e quem usa. Isso significa diagnosticar processos manuais e redesenhá-los como fluxos automatizados, e construir as interfaces que sustentam esse fluxo no dia a dia.</p>
+        <p>Também sou palestrante — falo sobre carreira e posicionamento técnico para profissionais de tecnologia, o que me obriga a manter a mesma clareza fora do código que dentro dele.</p>
+        <div class="about-tags">
+          <span class="tag">Mapeamento de processos</span>
+          <span class="tag">Automação (Zapier / Make)</span>
+          <span class="tag">Desenvolvimento web</span>
+          <span class="tag">Integração de APIs</span>
+          <span class="tag">Palestras & conteúdo técnico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="section-head reveal">
+      <h2>Como eu trabalho</h2>
+      <span class="section-num">02 / stack</span>
+    </div>
+    <div class="stack-grid reveal">
+      <div class="stack-item">
+        <span class="idx">diagnóstico</span>
+        <h3>Análise de sistemas</h3>
+        <p>Mapeio processos reais, identifico gargalos e desenho a arquitetura da solução antes de qualquer linha de código.</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">construção</span>
+        <h3>Desenvolvimento web</h3>
+        <p>HTML, CSS e JavaScript aplicados a interfaces funcionais — do protótipo ao produto que o usuário final realmente usa.</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">conexão</span>
+        <h3>Integração & APIs</h3>
+        <p>Conecto sistemas que não foram feitos para conversar entre si, via API ou automação.</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">eliminação</span>
+        <h3>Automação de processos</h3>
+        <p>Zapier, Make e afins para tirar trabalho manual repetitivo do caminho de quem deveria estar pensando, não copiando e colando.</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">estrutura</span>
+        <h3>Dados & SQL</h3>
+        <p>Modelagem e consulta de dados como base de decisão — não como planilha perdida.</p>
+      </div>
+      <div class="stack-item">
+        <span class="idx">tradução</span>
+        <h3>Comunicação técnica</h3>
+        <p>Explico sistema complexo pra quem não é técnico — em reunião, em palestra ou em documentação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia">
+    <div class="section-head reveal">
+      <h2>Log de experiência</h2>
+      <span class="section-num">03 / experiência</span>
+    </div>
+    <div class="log reveal">
+      <div class="log-entry">
+        <span class="log-time">atual</span>
+        <div class="log-main">
+          <h3>iatec</h3>
+          <p class="role">Analista de Sistemas</p>
+          <p>Atuação em análise, diagnóstico e desenvolvimento de soluções de sistema dentro do contexto técnico da empresa.</p>
+        </div>
+        <span class="log-status live">em execução</span>
+      </div>
+      <div class="log-entry">
+        <span class="log-time">contínuo</span>
+        <div class="log-main">
+          <h3>Palestras & conteúdo técnico</h3>
+          <p class="role">Palestrante — carreira e posicionamento em tecnologia</p>
+          <p>Apresentações voltadas a profissionais de TI sobre carreira, liderança e posicionamento técnico.</p>
+        </div>
+        <span class="log-status">recorrente</span>
+      </div>
+      <div class="log-entry">
+        <span class="log-time">base</span>
+        <div class="log-main">
+          <h3>Formação técnica</h3>
+          <p class="role">Sistemas de Informação</p>
+          <p>Base técnica em desenvolvimento, banco de dados e arquitetura de sistemas.</p>
+        </div>
+        <span class="log-status">concluído</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="section-head reveal">
+      <h2>Projetos</h2>
+      <span class="section-num">04 / projetos</span>
+    </div>
+    <div class="proj-grid reveal">
+      <div class="proj-card">
+        <div>
+          <p class="proj-tag">Automação</p>
+          <h3>Nome do projeto</h3>
+          <p>Descreva aqui o problema real que o cliente tinha e o que foi automatizado — em uma ou duas frases diretas.</p>
+        </div>
+        <div class="proj-meta">
+          <span>Make</span><span>API</span><span>Processo</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div>
+          <p class="proj-tag">Desenvolvimento</p>
+          <h3>Nome do projeto</h3>
+          <p>Descreva aqui a interface ou sistema construído e o impacto direto para quem usa.</p>
+        </div>
+        <div class="proj-meta">
+          <span>HTML</span><span>CSS</span><span>JS</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div>
+          <p class="proj-tag">Diagnóstico</p>
+          <h3>Nome do projeto</h3>
+          <p>Descreva aqui o mapeamento de processo feito e o ganho de eficiência gerado.</p>
+        </div>
+        <div class="proj-meta">
+          <span>Mapeamento</span><span>Notion</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div>
+          <p class="proj-tag">Integração</p>
+          <h3>Nome do projeto</h3>
+          <p>Descreva aqui os sistemas conectados e o que passou a funcionar automaticamente.</p>
+        </div>
+        <div class="proj-meta">
+          <span>API</span><span>Zapier</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contact reveal">
+      <p class="eyebrow" style="color:var(--dourado-bright)">Vamos conversar</p>
+      <h2>Tem um sistema<br>travado? <em>Eu resolvo.</em></h2>
+      <p>Disponível para projetos de análise, automação e desenvolvimento. Comece com uma conversa de escopo — sem compromisso.</p>
+      <div class="contact-links">
+        <a href="mailto:contato@joicearaujo.com">email →</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin →</a>
+        <a href="https://instagram.com/joiceraujo" target="_blank" rel="noopener">instagram →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Joice Araújo</span>
+    <span>Fortaleza, CE — Brasil</span>
+  </footer>
+
+</main>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
